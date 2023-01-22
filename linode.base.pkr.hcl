@@ -15,6 +15,11 @@ variable "api_token" {
    default = env("LINODE_API_TOKEN")
 }
 
+variable "ansible_playbook_path" {
+  type    = string
+  default = env("ANSIBLE_PLAYBOOK_PATH")
+}
+
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 source "linode" "amadla-base-server" {
@@ -40,13 +45,13 @@ build {
   } 
 
   provisioner "file" {
-    destination = "/root/.amadla/secrets/id_rsa.pub" # The destination the users ssh public key must go to
-    source      = "/home/.ssh/id_rsa.pub" # The source of the ssh public key
+    destination = "/root/.amadla/secrets/id_ed25519.pub" # The destination the users ssh public key must go to
+    source      = "/home/jn/.ssh/id_ed25519.pub" # The source of the ssh public key
   }
 
   provisioner "ansible" {
     use_proxy     = false
-    playbook_file = "/home/ansible/playbook.yml"
+    playbook_file = "${var.ansible_playbook_path}"
   } 
 
 }
