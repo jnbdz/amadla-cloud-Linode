@@ -1,18 +1,28 @@
 # Linode
 
 variable "server_image_name" {
-   type    = string
-   default = env("SERVER_IMAGE_NAME")
+  type    = string
+  default = env("SERVER_IMAGE_NAME")
 }
 
 variable "server_image_descr" {
-   type    = string
-   default = env("SERVER_IMAGE_DESCR")
+  type    = string
+  default = env("SERVER_IMAGE_DESCR")
 }
 
 variable "api_token" {
-   type    = string
-   default = env("LINODE_API_TOKEN")
+  type    = string
+  default = env("LINODE_API_TOKEN")
+}
+
+variable "env_var_source_based_image" {
+  type    = string
+  default = env("SOURCE_BASED_IMAGE")
+}
+
+variable "env_var_source_region" {
+  type = string
+  default = env("SOURCE_REGION")
 }
 
 variable "ansible_playbook_path" {
@@ -20,17 +30,21 @@ variable "ansible_playbook_path" {
   default = env("ANSIBLE_PLAYBOOK_PATH")
 }
 
-locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
+locals { 
+  timestamp = regex_replace(timestamp(), "[- TZ:]", "")
+  source_region = coalesce(var.env_var_source_region, "us-east")
+  source_based_image = coalesce(var.env_var_source_based_image, "linode/rocky9")
+}
 
 source "linode" "amadla-base-server" {
-   linode_token      = "${var.api_token}"
-   instance_label    = "${var.server_image_name}${local.timestamp}"
-   image_label       = "${var.server_image_name}${local.timestamp}"
-   image_description = "${var.server_image_descr}"
-   image             = "linode/debian10"
-   instance_type     = "g6-nanode-1"
-   region            = "us-east"
-   ssh_username      = "root"
+  linode_token      = "${var.api_token}"
+  instance_label    = "${var.server_image_name}-${local.timestamp}"
+  image_label       = "${var.server_image_name}-${local.timestamp}"
+  image_description = "${var.server_image_descr}"
+  image             = "${local.source_based_image}"
+  instance_type     = "g6-nanode-1"
+  region            = "${local.source_region}"
+  ssh_username      = "root"
 }
 
 build {
