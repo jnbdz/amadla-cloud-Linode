@@ -1,5 +1,10 @@
 # Linode
 
+variable "api_token" {
+  type    = string
+  default = env("LINODE_API_TOKEN")
+}
+
 variable "server_image_name" {
   type    = string
   default = env("SERVER_IMAGE_NAME")
@@ -8,11 +13,6 @@ variable "server_image_name" {
 variable "server_image_descr" {
   type    = string
   default = env("SERVER_IMAGE_DESCR")
-}
-
-variable "api_token" {
-  type    = string
-  default = env("LINODE_API_TOKEN")
 }
 
 variable "env_var_source_based_image" {
