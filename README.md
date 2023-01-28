@@ -18,7 +18,7 @@ Four easy steps for a quickstart:
 2. Under the *API Tokens* tab click *Create a Personal Access Token*.
 3. Give it a label.
 4. Choose how long the token should exist.
-5. The list of *Access* settings: 
+5. The list of [*Access* settings](./assets/linode-access-selection.png): 
     - **Account** - Read Only
     - **Databases** - None
     - **Domains** - Read/Write
