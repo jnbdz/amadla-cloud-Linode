@@ -3,6 +3,14 @@
 # Linode
 - https://www.linode.com/
 
+## Quick start
+Four easy steps for a quick start: 
+
+1. [Get the API key](#key-get-the-api-token)
+2. Set **LINODE_API_TOKEN** as a key with the secret in Vault or in the `.env` file or `export`
+3. Run the command: `amadla server-image build Linode Base` (`Base` is the name of the sevrer module, you can use anything else)
+4. To see the image created go to: https://cloud.linode.com/images
+
 ## :key: Get The API Token
 1. Go to the [API Tokens](https://cloud.linode.com/profile/tokens) page or: 
     - Click on your username on the right.
@@ -48,6 +56,8 @@ For Linode the environment variable name is: **LINODE_API_TOKEN**
 - Vault setup: 
     - When adding the API key make the key name of the secret is the same as the environment variable name: **LINODE_API_TOKEN**
     - Also make sure you use the right path and that you are using [*key/value* as the storage engine](https://developer.hashicorp.com/vault/docs/secrets/kv/kv-v2)
+- Environment variable: 
+    - You can also `export` the value in the same terminal session where you are executing `amadla-cli` or in the `.env` file
 
 ## :copyright: Credits
 [./assets/linode-logo.svg](./assets/linode-logo.svg) - Copyright https://www.linode.com/
