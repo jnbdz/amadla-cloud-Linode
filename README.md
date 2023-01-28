@@ -3,8 +3,8 @@
 # :cloud: Linode
 - https://www.linode.com/
 
-## :running: Quick start
-Four easy steps for a quick start: 
+## :running: Quickstart
+Four easy steps for a quickstart: 
 
 1. [Get the API key](#key-get-the-api-token)
 2. Set **LINODE_API_TOKEN** as a key with the secret in Vault or in the `.env` file or `export`
