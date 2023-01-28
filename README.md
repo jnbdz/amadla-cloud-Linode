@@ -1,9 +1,9 @@
 <img src="./assets/linode-logo.svg" alt="Linode logo" style="width: 450px;" align="right">
 
-# Linode
+# :cloud: Linode
 - https://www.linode.com/
 
-## Quick start
+## :running: Quick start
 Four easy steps for a quick start: 
 
 1. [Get the API key](#key-get-the-api-token)
@@ -38,7 +38,7 @@ Four easy steps for a quick start:
 8. Copy the token or download it.
 9. [Added the token to Vault](../../docs/adding-secrets-to-vault.md).
 
-## Environment Variables
+## :round_pushpin: Environment Variables
 - **LINODE_API_TOKEN** (required) - The variable name is different from one cloud to another. It is important for Packer and Terraform to be able to send requests to the cloud service provider to generate the server images and the infratructure. This value can be set in your environment variable with: 
     - `.env` file
     - `export` command
@@ -49,7 +49,7 @@ Four easy steps for a quick start:
 - **SOURCE_REGION** (optional) - Many cloud services have server farms in different places around the country or/and around the world. So more often than not you need to specify a region. The default region: `us-east`.
 - **ANSIBLE_PLAYBOOK_PATH** (optional) - This is pass by `amadla-cli`. It is by default the absolute path to the Ansible playbook of the server module that you chose. You can always change to another path that points to a Ansible playbook.
 
-## API Key
+## :lock_with_ink_pen: Set API Key
 
 For Linode the environment variable name is: **LINODE_API_TOKEN**
 
