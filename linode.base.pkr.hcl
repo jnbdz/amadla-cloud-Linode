@@ -26,15 +26,27 @@ variable "server_region" {
   default = env("SERVER_REGION")
 }
 
+variable "server_instance_type" {
+  type    = string
+  default = env("server_instance_type")
+}
+
+variable "ssh_username" {
+  type    = string
+  default = env("ssh_username")
+}
+
 variable "ansible_playbook_path" {
   type    = string
   default = env("ANSIBLE_PLAYBOOK_PATH")
 }
 
 locals {
-  timestamp          = regex_replace(timestamp(), "[- TZ:]", "")
-  source_region      = coalesce(var.env_var_source_region, "us-east")
-  source_based_image = coalesce(var.env_var_source_based_image, "linode/rocky9")
+  timestamp             = regex_replace(timestamp(), "[- TZ:]", "")
+  server_region         = coalesce(var.server_region, "us-east")
+  server_based_image    = coalesce(var.server_based_image, "linode/rocky9")
+  server_instance_type  = coalesce(var.server_instance_type, "g6-nanode-1")
+  ssh_username          = coalesce(var.ssh_username, "root")
 }
 
 source "linode" "amadla-base-server" {
@@ -42,10 +54,10 @@ source "linode" "amadla-base-server" {
   instance_label    = "${var.server_image_name}-${local.timestamp}"
   image_label       = "${var.server_image_name}-${local.timestamp}"
   image_description = "${var.server_image_descr}"
-  image             = "${local.source_based_image}"
-  instance_type     = "g6-nanode-1"
-  region            = "${local.source_region}"
-  ssh_username      = "root"
+  image             = "${local.server_based_image}"
+  instance_type     = "${local.server_instance_type}"
+  region            = "${local.server_region}"
+  ssh_username      = "${local.ssh_username}"
 }
 
 build {
