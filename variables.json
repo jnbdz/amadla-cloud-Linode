@@ -1,0 +1,29 @@
+{
+  "linode_token": "your_linode_token",
+  "instances": [
+    {
+      "label": "instance1",
+      "type": "g6-standard-2",
+      "region": "us-central",
+      "packer_image_label": "linode.base.pkr",
+      "ansible_playbook_path": "/path/to/ansible/playbook1.yml",
+      "ssh_public_key": ""
+    },
+    {
+      "label": "instance2",
+      "type": "g6-standard-2",
+      "region": "us-central",
+      "packer_image_label": "linode.base.pkr",
+      "ansible_playbook_path": "/path/to/ansible/playbook2.yml",
+      "ssh_public_key": ""
+    },
+    {
+      "label": "instance3",
+      "type": "g6-standard-2",
+      "region": "us-central",
+      "packer_image_label": "linode.base.pkr",
+      "ansible_playbook_path": "/path/to/ansible/playbook3.yml",
+      "ssh_public_key": ""
+    }
+  ]
+}
