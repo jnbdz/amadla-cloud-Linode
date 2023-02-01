@@ -1,11 +1,11 @@
 {
     "api_token": "",
     "instances": [{% for item in array %}
-            {
-                "label": "{{ item["name"] }}",
-                "type": "{{ item["parameters"]["type"] }}",
-                "ansible_playbook_path": "",
-                "ssh_public_key": ""
-            }{% if not loop.last %},{% endif %}{% endfor %}
+        {
+            "label": "{{ item["name"] }}",
+            "type": "{{ item["parameters"]["type"] }}",
+            "ansible_playbook_path": "{{ item["type"] }}",
+            "ssh_public_key": ""
+        }{% if not loop.last %},{% endif %}{% endfor %}
     ]
 }

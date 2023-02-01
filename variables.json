@@ -1,29 +1,29 @@
 {
     "api_token": "",
     "instances": [
-            {
-                "label": "container-apps-1",
-                "type": "small-2gb",
-                "ansible_playbook_path": "",
-                "ssh_public_key": ""
-            },
-            {
-                "label": "monitoring-server",
-                "type": "small-1gb",
-                "ansible_playbook_path": "",
-                "ssh_public_key": ""
-            },
-            {
-                "label": "vpn-server",
-                "type": "small-1gb",
-                "ansible_playbook_path": "",
-                "ssh_public_key": ""
-            },
-            {
-                "label": "x11-apps-1",
-                "type": "small-2gb",
-                "ansible_playbook_path": "",
-                "ssh_public_key": ""
-            }
+        {
+            "label": "container-apps-1",
+            "type": "small-2gb",
+            "ansible_playbook_path": "Containers",
+            "ssh_public_key": ""
+        },
+        {
+            "label": "monitoring-server",
+            "type": "small-1gb",
+            "ansible_playbook_path": "Containers",
+            "ssh_public_key": ""
+        },
+        {
+            "label": "vpn-server",
+            "type": "small-1gb",
+            "ansible_playbook_path": "Base",
+            "ssh_public_key": ""
+        },
+        {
+            "label": "x11-apps-1",
+            "type": "small-2gb",
+            "ansible_playbook_path": "X11Apps",
+            "ssh_public_key": ""
+        }
     ]
 }
