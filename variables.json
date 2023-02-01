@@ -3,6 +3,7 @@
     "instances": [
         {
             "label": "container-apps-1",
+            "image": "linode/rocky9",
             "type": "small-2gb",
             "region": "us-east",
             "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/Containers/playbook.yml",
@@ -10,6 +11,7 @@
         },
         {
             "label": "monitoring-server",
+            "image": "linode/rocky9",
             "type": "small-1gb",
             "region": "us-east",
             "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/Containers/playbook.yml",
@@ -17,6 +19,7 @@
         },
         {
             "label": "vpn-server",
+            "image": "linode/rocky9",
             "type": "small-1gb",
             "region": "us-east",
             "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/Base/playbook.yml",
@@ -24,6 +27,7 @@
         },
         {
             "label": "x11-apps-1",
+            "image": "linode/rocky9",
             "type": "small-2gb",
             "region": "us-east",
             "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/X11Apps/playbook.yml",

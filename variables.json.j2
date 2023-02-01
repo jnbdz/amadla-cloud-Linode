@@ -3,6 +3,7 @@
     "instances": [{% for item in array %}
         {
             "label": "{{ item["name"] }}",
+            "image": "{{ item["parameters"]["base_image"] }}",
             "type": "{{ item["parameters"]["type"] }}",
             "region": "{{ item["parameters"]["region"] }}",
             "ansible_playbook_path": "{{ item["server"]["absolute_path"] }}/playbook.yml",
