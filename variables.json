@@ -1,11 +1,29 @@
 {
-
-    {'apps': {'ApereoCAS': {'configuration': {'network': {'private': {'entries': [{'location': '/cas', 'ports': [{'external': 80, 'internal': 8080}, {'external': 443, 'internal': 8080}]}]}}}, 'repository': 'git@github.com:Amadla-com/app-ApereoCAS.git', 'tag': 'v1.0'}, 'CMDBuild': {'configuration': {'network': {'private': {'entries': [{'location': '/cmdbuild', 'ports': [{'external': 80, 'internal': 8080}, {'external': 443, 'internal': 8080}]}]}}}, 'repository': 'git@github.com:Amadla-com/app-CMDBuild.git', 'tag': 'v1.0'}, 'NextCloud': {'configuration': {'network': {'private': {'entries': [{'location': '/nextcloud', 'ports': [{'external': 80, 'internal': 8089}, {'external': 443, 'internal': 8087}]}]}}}, 'repository': 'git@github.com:Amadla-com/app-NextCloud.git', 'tag': 'v1.0'}}, 'cloud': {'name': 'Linode', 'repository': 'git@github.com:jnbdz/amadla-cloud-Linode.git', 'tag': 'v1.0'}, 'entry-server': 'vpn-server', 'name': 'container-apps-1', 'parameters': {'type': 'small-2gb'}, 'private': True, 'server': {'name': 'Containers', 'repository': 'git@github.com:jnbdz/amadla-server-Containers.git', 'tag': 'v1.0'}, 'type': 'Containers'}
-
-    {'apps': {'OpenSearch': {'configuration': None, 'repository': 'git@github.com:Amadla-com/app-OpenSearch.git', 'tag': 'v1.0'}, 'OpenSearchDashboards': {'configuration': None, 'repository': 'git@github.com:Amadla-com/app-OpenSearchDashboards.git', 'tag': 'v1.0'}}, 'cloud': {'name': 'Linode', 'repository': 'git@github.com:jnbdz/amadla-cloud-Linode.git', 'tag': 'v1.0'}, 'entry-server': 'vpn-server', 'name': 'monitoring-server', 'parameters': {'type': 'small-1gb'}, 'private': True, 'server': {'name': 'Containers', 'repository': 'git@github.com:jnbdz/amadla-server-Containers.git', 'tag': 'v1.0'}, 'type': 'Containers'}
-
-    {'apps': {'OpenVPN': {'configuration': None, 'repository': 'git@github.com:Amadla-com/app-OpenVPN.git', 'tag': 'v1.0'}}, 'cloud': {'name': 'Linode', 'repository': 'git@github.com:jnbdz/amadla-cloud-Linode.git', 'tag': 'v1.0'}, 'name': 'vpn-server', 'parameters': {'type': 'small-1gb'}, 'private': False, 'server': {'name': 'Base', 'repository': 'git@github.com:jnbdz/amadla-server-Base.git', 'tag': 'v1.0'}, 'type': 'Base'}
-
-    {'apps': {'xapp': None}, 'cloud': {'name': 'Linode', 'repository': 'git@github.com:jnbdz/amadla-cloud-Linode.git', 'tag': 'v1.0'}, 'entry-server': 'vpn-server', 'name': 'x11-apps-1', 'parameters': {'type': 'small-2gb'}, 'private': True, 'server': {'name': 'X11Apps', 'repository': 'git@github.com:jnbdz/amadla-server-X11Apps.git', 'tag': 'v1.0'}, 'type': 'X11Apps'}
-
+    "api_token": "",
+    "instances": [
+            {
+                "label": "container-apps-1",
+                "type": "small-2gb",
+                "ansible_playbook_path": "",
+                "ssh_public_key": ""
+            },
+            {
+                "label": "monitoring-server",
+                "type": "small-1gb",
+                "ansible_playbook_path": "",
+                "ssh_public_key": ""
+            },
+            {
+                "label": "vpn-server",
+                "type": "small-1gb",
+                "ansible_playbook_path": "",
+                "ssh_public_key": ""
+            },
+            {
+                "label": "x11-apps-1",
+                "type": "small-2gb",
+                "ansible_playbook_path": "",
+                "ssh_public_key": ""
+            }
+    ]
 }
