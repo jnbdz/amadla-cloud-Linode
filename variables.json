@@ -4,25 +4,29 @@
         {
             "label": "container-apps-1",
             "type": "small-2gb",
-            "ansible_playbook_path": "Containers",
+            "region": "us-east",
+            "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/Containers/playbook.yml",
             "ssh_public_key": ""
         },
         {
             "label": "monitoring-server",
             "type": "small-1gb",
-            "ansible_playbook_path": "Containers",
+            "region": "us-east",
+            "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/Containers/playbook.yml",
             "ssh_public_key": ""
         },
         {
             "label": "vpn-server",
             "type": "small-1gb",
-            "ansible_playbook_path": "Base",
+            "region": "us-east",
+            "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/Base/playbook.yml",
             "ssh_public_key": ""
         },
         {
             "label": "x11-apps-1",
             "type": "small-2gb",
-            "ansible_playbook_path": "X11Apps",
+            "region": "us-east",
+            "ansible_playbook_path": "/home/jn/Projects/Amadla/AmadlaToolServerImageBuilder/modules/servers.d/X11Apps/playbook.yml",
             "ssh_public_key": ""
         }
     ]
