@@ -1,5 +1,5 @@
 {
-    "api_token": "",
+    "api_token": "{{ secrets["api_token"] }}",
     "instances": [{% for item in array %}
         {
             "label": "{{ item["name"] }}",
@@ -7,7 +7,7 @@
             "type": "{{ item["parameters"]["type"] }}",
             "region": "{{ item["parameters"]["region"] }}",
             "ansible_playbook_path": "{{ item["server"]["absolute_path"] }}/playbook.yml",
-            "ssh_public_key": ""
+            "ssh_public_key": "{{ secrets["ssh_public_key"] }}"
         }{% if not loop.last %},{% endif %}{% endfor %}
     ]
 }
