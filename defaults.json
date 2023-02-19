@@ -1,6 +1,0 @@
-{
-    "image": "linode/rocky9",
-    "instance_type": "g6-nanode-1",
-    "region": "us-east",
-    "ssh_username": "root"
-}
